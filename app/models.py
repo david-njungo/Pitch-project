@@ -11,3 +11,11 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(), unique=True, nullable=False)
     email = db.Column(db.String(), unique=True, nullable=False)
     password = db.Column(db.String(), nullable=False)
+
+class Pitch(db.Model):
+    __tablename__= "pitches"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement = True)
+    author = db.Column(db.String(), nullable=False)
+    description= db.Column(db.String(), nullable=False)
+    

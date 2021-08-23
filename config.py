@@ -8,10 +8,10 @@ class Base:
 
 class Development(Base):
     FLASK_ENV = os.environ.get("FLASK_ENV")
-    DATABASE = os.environ.get("DATABASE")
-    POSTGRES_USER = os.environ.get("POSTGRES_USER")
-    POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
-    SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
+    DATABASE = os.environ.get("pitchproject")
+    POSTGRES_USER = os.environ.get("moringa")
+    POSTGRES_PASSWORD = os.environ.get("1234")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("db+driver://moringa:1234@localhost/pitchproject")
 
 class Staging(Base):
     DATABASE = ""
