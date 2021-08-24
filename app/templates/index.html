@@ -1,13 +1,39 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro%}
+<!-- {% import 'macros.html' as macro%} -->
 
 <!-- Content block -->
 {%block content%}
-<div class="container-fluid">
-    <div class="text-center">
-        <h1>Perfect Pitch</h1>
-        <p>Showing the greatest pitches of all times</p>
+<div class="container-fluid bg-info">
+    <div class="text-center ">
+        <h1 class="fw-5 pt-5 text-dark">Perfect Pitch</h1>
+        <p class="display-6 fw-4 text-light">Showing the greatest pitches of all times</p>
     </div>
-   
+    <div class="row pt-4">
+        <div class="col-4">
+            <h2 class="text-light">Pick-up lines Pitches</h2>
+            <div class="col-4">              
+                <p class="card-text">You’re like a style guide … you add consistency to my life.</p>
+                <p>Written by:Joy</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <h2 class="text-light">Interview Pitches</h2>
+            <h3>For getting their attention </h3>
+            <p>Hi, my name is Mark. After graduating with my Bachelor’s degree in Business Administration,
+                 I’ve spent the last three years building professional experience as an Executive Assistant.
+                I’ve successfully managed end-to-end event coordination and have generated a strong 
+                professional network for my colleagues. I was excited to learn about this opportunity in the
+                 sports management space </p>
+            <p>Written by:Mark</p>
+        </div>
+        <div class="col-4">
+            <h2 class="text-light">Product Pitch</h2>
+            <p>Gap is better known as a clothing brand, but the company behind it, Gap Inc, is a publicly 
+                traded firm with multiple successful brands under its belt. In its pitch to its potential 
+                investors, Gap Inc emphasizes its dominant position in the marketplace while ensuring that
+                the company will be a secure long-term investment.</p>
+            <p>Written by:GAP Inc.</p>
+        </div>   
+    </div>
 </div>
 {%endblock%}

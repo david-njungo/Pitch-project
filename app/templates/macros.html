@@ -1,11 +1,12 @@
-{% macro displayPitches(category) %}
+{% macro displayPitches(pitch_list) %}
 
 <div class="container">
 <div class="row bg-light text-center">
-    {% for pitch in category %}    
-       <a href="{{ url_for('main.') }}">{{pitch.description}}</a> 
-       <p>Written by:{{pitch.author}}</p>
-        <br>  
+    {% for pitches in pitch_list %}    
+       <a href="{{ url_for('main.') }}">{{pitches.description}}</a> 
+       <p>Written by:{{pitches.author}}</p>
+        <br>
+         
     {% endfor %}
 </div>
 </div>

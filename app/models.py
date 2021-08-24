@@ -11,6 +11,9 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(), unique=True, nullable=False)
     email = db.Column(db.String(), unique=True, nullable=False)
     password = db.Column(db.String(), nullable=False)
+    pitch_id = db.Column(db.Integer,db.ForeignKey('pitches.id'))
+    def __repr__(self):
+        return f'User {self.username}'
 
 class Pitch(db.Model):
     __tablename__= "pitches"
@@ -18,4 +21,15 @@ class Pitch(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement = True)
     author = db.Column(db.String(), nullable=False)
     description= db.Column(db.String(), nullable=False)
-    
+    comment = db.Column(db.String(), nullable=False)
+    users = db.relationship('User',backref = 'pitch',lazy="dynamic")
+    category_id = db.Column(db.Integer,db.ForeignKey('categories.id'))
+
+    def __repr__(self):
+        return f'Pitch {self.author}'
+class Category(db.model):
+    __tablename__="categories"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement = True)
+    name = db.Column(db.String(), nullable=False)
+    pitches = db.relationship('Pitch',backref = 'category',lazy="dynamic")

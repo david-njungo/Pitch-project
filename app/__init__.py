@@ -1,9 +1,7 @@
 from flask import Flask
 from config import config_options
-from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 
-bootstrap = Bootstrap()
 db = SQLAlchemy()
 
 def create_app(config_name):
@@ -14,7 +12,6 @@ def create_app(config_name):
     app.config.from_object(config_options[config_name])
 
     # Initializing flask extensions
-    bootstrap.init_app(app)
     db.init_app(app)
     
     # Registering the blueprint
@@ -22,7 +19,7 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
 
       # setting config
-    from .request import configure_request
-    configure_request(app)
+    # from .request import configure_request
+    # configure_request(app)
 
     return app
