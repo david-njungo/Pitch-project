@@ -7,6 +7,11 @@ class Config:
     SECRET_KEY = secrets.token_hex()
 
 class DevConfig(Config):
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     FLASK_ENV = os.environ.get("FLASK_ENV")
     DATABASE = os.environ.get("pitchproject")
     POSTGRES_USER = os.environ.get("moringa")
