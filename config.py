@@ -12,11 +12,11 @@ class DevConfig(Config):
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    FLASK_ENV = os.environ.get("FLASK_ENV")
-    DATABASE = os.environ.get("pitchproject")
+    FLASK_ENV ="FLASK_ENV"
+    DATABASE = "pitchproject"
     POSTGRES_USER = os.environ.get("moringa")
     POSTGRES_PASSWORD = os.environ.get("1234")
-    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:1234@localhost/pitchproject'
+    SQLALCHEMY_DATABASE_URI =os.environ.get("postgresql+psycopg2://moringa:1234@localhost/pitchproject")
 
 class ProdConfig(Config):
     DATABASE = ""
