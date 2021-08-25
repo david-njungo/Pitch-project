@@ -1,6 +1,6 @@
 from flask import render_template,redirect,url_for
 from . import auth
-from ..models import User
+from ..models import User,Pitch
 from .forms import LoginForm,RegistrationForm
 from flask_login import login_user,logout_user,login_required
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -15,7 +15,7 @@ def login():
         user = User.query.filter_by(username = login_form.email.data).first()
         if check_password_hash(user.password, form.password.data):
             login_user(user)
-            return redirect(url_for('./pitches'))
+        return redirect(url_for('auth.pitches'))
 
         flash('Invalid username or Password')
 
